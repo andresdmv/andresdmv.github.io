@@ -137,7 +137,7 @@ header nav ul li a {
     background-image: url('../img/web.jpg');
     background-position: top;
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; Para evitar problemas en Retina IOS */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -240,7 +240,7 @@ h2 {
     background-image: url('../img/fondo.jpg');
     padding: 60px 40px;
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
 }
 .eslogan{
     font-size: 40px;
@@ -385,6 +385,16 @@ li {
 }
 
 /* Media Queries */
+
+@media (min-width: 1440px) {
+    .hero {
+        background-attachment: fixed; /* El efecto parallax solo funcionada en dispositivo de mas de 1440 pixeles */
+    }
+
+    .fondo {
+        background-attachment: fixed;
+    }
+}
 
 @media (max-width: 920px) {
     .izda, .centro, .dcha {
